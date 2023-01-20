@@ -5,9 +5,9 @@ Using Python language to develop, Use Mysql as a Database and Use Django Framewo
 <p> => Home Page <p/>
 <p> => Ice Cream/Category Page<p/>
 <p> => Product Page  <p/>
-<p> => Shopping Cart <p/>
-<p> => Product Search <p/>
-<p> => Register <p/>
-<p> => Login <p/>
-<p> => Account <p/>
+<p> => Shopping Cart Page <p/>
+<p> => Product Search Page <p/>
+<p> => Register Page <p/>
+<p> => Login Page <p/>
+<p> => Account Page <p/>
 
