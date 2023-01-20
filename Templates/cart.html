@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+        
+{% block content %}
+    <div class="you-are-here">
+        <a href="/" style="color:black;" >Home</a>&nbsp;/&nbsp;
+        <a>Cart</a>
+    </div>  
+    {% if count == 0 %}
+        {% if check == 1 %}
+            <div div style="padding: 20px 0 140px 0; text-align: center;">
+                <img src="Static/images/home/img3.png" alt="" style=" padding: 20px;" width="400" height="250"/>
+                <h5 style="font-size: 25px; padding: 30px;">Shipping is being delivered !</h5>
+            </div>  
+        {% else %}
+            <div div style="padding: 70px 0 170px 0; text-align: center;">
+                <i class="fa-sharp fa-solid fa-circle-exclamation" style="font-size: 35px; padding: 20px;"></i>
+                <h5 style="font-size: 25px; font-weight: bold; padding: 5px;">There are no product in the cart</h5>
+                <p style="font-size: 15px; padding: 5px;">Browse products and press Add to cart to complete your transaction.</p>
+            </div>
+        {% endif %}
+    {% else %}
+        <h3 class="text-main" style="padding: 0px 0px 40px 0px;">Your Shopping Cart</h3>
+        <div class="container">
+            <div class="padding-label"></div>
+                <div class="card h-100" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 60px;">
+                    <table style="text-align: center; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        {% for post in posts %}
+                        <tbody>
+                            <tr>
+                                <td style="padding: 20px;"><img src="Static/images/products/{{post.image}}.png" heigh=100px; width=100px;/></td>
+                                <td>{{post.name}}</td>
+                                <td>{{post.amount}}</td>
+                                <td>{{post.price}} ฿</td>
+                                <td >
+                                    <a class="btn btn-danger" href="{% url 'delete' post.id %}" style="padding: 6px 30px; border-radius: 30px;">
+                                        <i class="fa fa-xmark" aria-hidden="true" style="font-size: 15px"></i>&nbsp;&nbsp;Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                        <tr>
+                            <td></td>
+                            <td style="font-weight: bold; font-size: 20px;">Total</td>
+                            <td style="font-weight: bold; font-size: 20px;">{{totalAmount}}</td>
+                            <td style="font-weight: bold; font-size: 20px;">{{totalPrice}} ฿</td>
+                            <td style="padding: 20px;">
+                                <div class="pay-padding">
+                                    <div class="button-center">
+                                        <a href="/payment">
+                                            <button type="button" class="btn btn-light">
+                                                <i class="fa fa-sharp fa-solid fa-money-check-dollar" aria-hidden="true" style="font-size: 15px"></i>&nbsp;&nbsp;Buy Now
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <div class="padding-body"></div>
+    {% endif %}
+    <div class="padding-body"></div>
+{% endblock %}

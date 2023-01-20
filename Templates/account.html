@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+        
+{% block content %}
+
+<div class="you-are-here">
+    <a href="/" style="color:black;">Home</a>&nbsp;/&nbsp;
+    <a>Login</a>&nbsp;/&nbsp;
+    <a>Account</a>
+</div>
+<h3 class="text-main" style="padding: 0px 0px 40px 0px;">Your Account</h3>
+<div class="container">
+    <div class="button-center">
+        <div class="card-account">
+            <div class="img-padding">
+                <img src="Static/images/home/img2.png" alt="" />
+            </div>
+            <div class="alert-padding" style="padding: 30px 0 5px;"><p>Username: &nbsp;&nbsp; {{user.username}}</p></div>
+            <div class="alert-padding" style="padding: 5px;"><p>Firstname: &nbsp;&nbsp; {{user.first_name}}</p></div>
+            <div class="alert-padding" style="padding: 5px;"><p>Lastname: &nbsp;&nbsp; {{user.last_name}}</p></div>
+            <div class="alert-padding" style="padding: 5px 0 20px;"><p>Email: &nbsp;&nbsp; {{user.email}}</p></div>
+            <div class="button-center">
+                <a href="/logout">
+                    <button type="button" class="btn btn-light">
+                        <i class="fa fa-sharp fa-solid fa-arrow-right-from-bracket" aria-hidden="true" style="font-size: 15px; color: #fff;"></i>&nbsp;&nbsp;Logout
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="padding-body"></div>
+{% endblock %}

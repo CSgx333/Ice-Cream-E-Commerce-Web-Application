@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+        
+{% block content %}
+<div class="you-are-here">
+    <a href="/" style="color:black;" >Home</a>&nbsp;/&nbsp;
+    <a>Search</a>
+</div>
+<div class="container">
+    {% if check == 1 %}
+    <h3 class="text-main" style="padding: 0px 0px 40px 0px;">Search Results &nbsp;: {{text}}</h3>
+    <div class="row my-3">
+        {% for post in posts %}
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                {% for new in news %}
+                    {% if post.name == new.name %}
+                        <span class="badge bg-success">New</span>
+                    {% endif %}
+                {% endfor %}
+                <img class="card-img-top" src="Static/images/products/{{post.image}}.png" alt="" />
+                <div class="card-body " >
+                    <h5 class="card-title">
+                        <div style="text-align: center; font-size: 16px; font-weight: bold;">{{post.name}}</div>
+                    </h5>
+                    <p style="text-align: center; font-size: 11px; padding: 5px;">Lorem ipsum is just a statement about the description of ice cream.
+                        Lorem ipsum It's a text that's only used for working in class.
+                    </p>
+                    <h5 style="text-align: center; font-size: 23px; font-weight: bold; padding: 8px;">{{post.price}} ฿</h5>
+                    <form action="add" method="POST">
+                        {% csrf_token %}
+                        <td class="cart-product-quantity" width="130px">
+                            <div class="input-group quantity" style="padding: 15px">
+                                <div class="input-group-prepend decrement-btn" style="cursor: pointer">
+                                    <span class="input-group-text">-</span>
+                                </div>
+                                <input type="text" class="qty-input form-control" name="amount" maxlength="2" max="10" value="1">
+                                <div class="input-group-append increment-btn" style="cursor: pointer">
+                                    <span class="input-group-text">+</span>
+                                </div>
+                            </div>
+                        </td>
+                        <input hidden type="text" value="{{post.name}}" name="name" id="name">
+                        <input hidden type="text" value="{{post.price}}" name="price" id="price">
+                        <input hidden type="text" value="{{post.image}}" name="image" id="image">
+                        <div class="button-center">
+                            {% if post.amount == 0 %}
+                                <h5 style="font-size: 22px; color: red; font-weight: bold;">Out of stock !</h5>
+                            {% else %}
+                                {% if user.is_authenticated %}
+                                    <a href="/cart">
+                                    <button type="submit" class="btn btn-light">
+                                        <i class="fa fa-sharp fa-solid fa-plus" aria-hidden="true" style="font-size: 15px; color: #fff;"></i>Cart
+                                    </button>
+                                    </a>
+                                {% else %}
+                                    <a href="/login">
+                                    <button type="button" class="btn btn-light">
+                                        <i class="fa fa-sharp fa-solid fa-plus" aria-hidden="true" style="font-size: 15px; color: #fff;"></i>Cart
+                                    </button>
+                                    </a>
+                                {% endif %}
+                            {% endif %}    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <div style="padding: 70px 0 170px 0; text-align: center;">
+            <i class="fa-sharp fa-solid fa-circle-exclamation" style="font-size: 35px; padding: 20px;"></i>
+            <h5 style="font-size: 25px; font-weight: bold; padding: 5px;">No Product Found</h5>
+            <p style="font-size: 15px; padding: 5px;">There are no products matching your current filter. Try removing some of them for better results.</p>
+        </div>
+    {% endif %}
+</div>
+<div class="padding-body"></div>
+{% endblock %}
