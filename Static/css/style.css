@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Dosis&family=Mali:wght@300&family=Nunito&family=Poppins:wght@300&display=swap');
+*{
+    font-family: 'Nunito', sans-serif;
+}
+a:link { text-decoration: none; }
+.container-fluid{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.logo{
+    max-width: 120px;
+}
+.navbar li{
+    list-style: none;
+    margin: 0 10px;
+}
+nav .navbar-nav li a{
+    color: black !important;
+}
+.nav-link:hover{
+    color: #00e1ff !important;
+}
+.padding-body{
+    padding-top: 120px;
+}
+.text-main{
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-name-index{
+    color: #000;
+    font-weight: bolder;
+}
+.text-price-index{
+    color: red;
+}
+footer{
+    text-decoration: none;
+}
+.fa{
+    padding-right: 10px;
+}
+.text-footer{
+    color: #000;
+}
+.footer-link a{
+    color: #000 !important;
+}
+.footer-link:hover a{
+    transition: all 0.3s ease-out;
+    color: #59edff !important;
+    font-weight: bolder;
+}
+.center-button button{
+    border-radius: 30px;
+    background-color: #f44336;
+    border-color: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 23px;
+}
+.center-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.center-button button:hover{
+    color: white;
+    background-color: #c4382e;
+    border-color: none;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+.hero-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    z-index: -1;
+}
+section .container .text-center2{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-fluid{
+    border-radius: 10px;
+}
+.img-fluid:hover{
+    transition: all 0.3s ease-out;
+    transform: scale(1.07);
+}
+.img-products:hover{
+    transition: all 0.3s ease-out;
+    transform: scale(1.2);
+}
+.form-group{
+    padding-top: 20px;
+}
+.padding-build{
+    padding-top: 500px;
+}
+.padding-build-bottom{
+    padding-top: 300px;
+}
+.container button{
+    padding: 6px 30px;
+    border-radius: 30px;
+    background-image: linear-gradient(to right bottom, #6CA1FF , #8BFCFE);
+    border-color: none;
+    color: #fff;
+}
+.container button:hover{
+    background-image: linear-gradient(to right bottom, #5785d5 , #78d6d8);
+    border-color: none;
+    color: #fff;
+}
+.button-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.img-cone{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.slider{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(188, 89, 165, 0.2);
+}
+.slider-container h1{
+    margin-bottom: -30px;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.slider-container p{
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.button-hero button{
+    padding: 10px 30px;
+    border: 1px solid white;
+    display: inline-block;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 10px white, 0 0 20px white;
+    border-radius: 30px;
+    color: #fff;
+    background-color: transparent;
+}
+.slider video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: blur(3px);
+}
+.container .card .badge{
+    font-size: 10px;
+    width: 35px;
+    margin: 20px;
+    position: absolute;
+}
+.center-form{
+    padding-bottom: 100px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-login{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 650px;
+}
+.container-login{
+    padding-bottom: 150px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+td{
+    text-align: center;
+    vertical-align: middle;
+}
+.number{
+    padding-left: 3px;
+    position: absolute;
+    margin-top: -7px;
+    margin-left: -15px;
+    background-color: #df2020;
+    color: #fff;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    font-size: 0.7rem
+}
+.alert-padding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+tr{
+    margin: 10px;
+}
+.form-control.rounded{
+    width: 500px;
+}
+.img-padding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-account{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 450px;
+    padding: 40px;
+}
+.you-are-here{
+    padding: 120px 0px 70px 120px ; 
+    font-size: 14px;
+}
+@media only screen and (max-width: 600px){
+    .col-md-4{
+        padding-top: 20px;
+    }
+    .slider{
+        height: 45vh;
+    }
+    .slider-container h1{
+        padding-top: 70px;
+        font-size: 25px;
+    }
+    .slider-container p{
+        font-size: 17px;
+    }
+    .button-hero button{
+        font-size: 17px
+    }
+    .slider video{
+        width: 100px;
+        height: 100px;
+    }
+    .card-login{
+        width: 500px;
+    }
+    .form-group label{
+        font-size: 14px
+    }
+    .form-text{
+        font-size: 12px
+    }
+    .card-login{
+        width: 500px;
+    }
+    .form-control.rounded{
+        width: 100px;
+    }
+    .you-are-here{
+        pointer-events: none;
+        opacity: 0.0;
+    }
+}
